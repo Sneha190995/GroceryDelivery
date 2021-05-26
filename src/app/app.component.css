@@ -1,0 +1,11 @@
+h3{
+    font-style: oblique;
+    color: orange;
+}
+li.nav-item{
+    list-style-type: none;
+    
+}
+a{
+    color: palegoldenrod;
+}

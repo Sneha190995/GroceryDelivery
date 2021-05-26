@@ -1,0 +1,91 @@
+<div class="container">
+    <table class="table">
+       <thead class="thead-dark">
+          <tr>
+             <th>Id</th>
+             <th>UnitName</th>
+             <th>UnitShort</th>
+             <th>Action</th>
+          </tr>
+       </thead>
+       <tbody>
+          <tr *ngFor = "let unit of units">
+             <td>{{unit.id}}</td>
+             <td>{{unit.unit_name}}</td>
+             <td>{{unit.unit_short}}</td>
+             <td><button class="btn btn-sm btn-info">edit</button></td>
+             <td><button class="btn btn-sm btn-danger" (click) = "confirmdeletion(unit.id)">delete</button></td>
+          </tr>
+       </tbody>
+    </table>
+  </div>
+
+<!-- for delete after confirmation-->
+<div class="backdrop" [ngStyle]="{'display':isDelete}"></div>
+<div class="modal" tabindex="-1" role="dialog"  [ngStyle]="{'display':isDelete}">
+  <div class="modal-dialog" role="document">
+     <!-- modal content  -->
+     <div class="modal-content">
+        <div class="modal-header">
+           <button type="button" class="close" aria-label="Close" (click)="onCloseHandled('delete')"><span aria-hidden="true">&times;</span></button>
+        </div>
+        <!-- model body section -->
+        <div class="modal-body">
+           <form>
+              <div class="form-group">
+                 <span><button class="btn btn-sm btn-info"(click)= "deleteUnit()">Yes</button></span> 
+                 <span><button class="btn btn-sm btn-danger" (click)="onCloseHandled('delete')">No</button></span>
+              </div>
+           </form>
+        </div>
+        <!-- Modal footer-->
+        <div class="modal-footer">
+           <button type="button" class="btn btn-default"  (click)="onCloseHandled('delete')">Cancel</button>
+        </div>
+     </div>
+  </div>
+</div>
+
+
+
+<!--for add or post-->
+<!-- open a modal window by clicking button-->
+<div class="container">
+   <!-- Modal section -->
+   <div class="modal" id="myModal" [ngClass]="{'show': showModal}">
+      <div class="modal-dialog">
+         <!-- Modal content-->
+         <div class="modal-content">
+            <div class="modal-header">
+               <button type="button" class="close" (click)="showModal=false"  data-dismiss="modal">&times;</button>
+            </div>
+            <!-- model body section -->
+            <div class="modal-body">
+               <form [formGroup]="unitForm">
+                  <div class="form-group">
+                     <label>Id</label>
+                     <input type="integer"  formControlName="id" required>
+                  </div>
+                  <div class="form-group">
+                     <label>Unit_Name</label>
+                     <input type="text"  formControlName="unit_name" required>
+                  </div>
+                  <div class="form-group">
+                     <label>Short_Name</label>
+                     <input type="text"  formControlName="unit_short" required>
+                  </div>
+                  <button type="submit" class="btn btn-primary" [disabled]="!unitForm.valid" (click)="onSubmit(unitForm)">Add</button>
+               </form>
+            </div>
+            <!-- Modal footer-->
+            <div class="modal-footer">
+               <button type="button" class="btn btn-danger" (click)="showModal=false"  data-dismiss="modal">Closes</button>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- open a modal window by clicking button-->
+   <button type="button" class="btn btn-info btn-sm" (click)="showModal=true" data-toggle="modal" data-target="#myModal">
+   Open modal
+   </button>
+ </div>

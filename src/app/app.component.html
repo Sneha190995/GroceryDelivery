@@ -1,0 +1,114 @@
+<nav class="navbar navbar-expand-md bg-dark navbar-dark ">
+    <div class="container">
+    <span class="navbar-text"><h3>Grocery Delivery </h3>
+    </span>
+     
+  <ul class="navbar-nav">
+  
+    <li class="nav-item"><a  routerLink="/" style="margin-right: 20px;" class="active">Home</a></li>
+    <li class="nav-item"><a  routerLink="/register" style="margin-right: 20px;">Register</a></li>
+    <li class="nav-item"><a  routerLink="/dashboard" style="margin-right: 20px;">Dashboard</a></li>
+  </ul>
+  </div>
+  </nav>
+
+<router-outlet></router-outlet>
+
+
+    <!-- <div class="container">
+    <table class="table">
+       <thead class="thead-dark">
+          <tr>
+             <th>Id</th>
+             <th>Name</th>
+             <th>Price</th>
+             <th>photo_Link</th>
+             <th>Description</th>
+             <th>Unit_id</th>
+             <th>Action</th>
+          </tr>
+       </thead>
+       <tbody>
+          <tr *ngFor = "let item of items">
+             <td>{{item.id}}</td>
+             <td>{{item.item_name}}</td>
+             <td>{{item.price}}</td>
+             <td class="text-wrap">{{item.item_photo}}</td>
+             <td>{{item.description}}</td>
+             <td>{{item.unit_id}}</td>
+             <td><button class="btn btn-sm btn-info">edit</button></td>
+             <td><button class="btn btn-sm btn-danger" >delete</button></td>
+          </tr>
+       </tbody>
+    </table>
+  </div>
+
+  
+
+
+  <div class="container">
+    <table class="table">
+       <thead class="thead-dark">
+          <tr>
+             <th>Id</th>
+             <th>FName</th>
+             <th>LName</th>
+             <th>UserName</th>
+             <th>Password</th>
+             <th>Time_inserted</th>
+             <th>Conformation_code</th>
+             <th>Time_confirmed</th>
+             <th>Contact_email</th>
+             <th>Contact_phone</th>
+             <th>City_id</th>
+             <th>Address</th>
+             <th>Delivery_city_id</th>
+             <th>Delivery_address</th>
+          </tr>
+       </thead>
+       <tbody>
+          <tr *ngFor = "let customer of customers">
+             <td>{{customer.id}}</td>
+             <td>{{customer.first_name}}</td>
+             <td>{{customer.last_name}}</td>
+             <td>{{customer.user_name}}</td>
+             <td>{{customer.password}}</td>
+             <td>{{customer.time_inserted}}</td>
+             <td>{{customer.confirmation_code}}</td>
+             <td>{{customer.time_confirmed}}</td>
+             
+             <td>{{customer.contact_email}}</td>
+             <td>{{customer.contact_phone}}</td>
+             <td>{{customer.city_id}}</td>
+             <td>{{customer.address}}</td>
+             <td>{{customer.delivery_city_id}}</td>
+             <td>{{customer.delivery_address}}</td>
+             <td><button class="btn btn-sm btn-info">edit</button></td>
+             <td><button class="btn btn-sm btn-danger" >delete</button></td>
+          </tr>
+       </tbody>
+    </table>
+  </div> 
+
+
+  <div class="container">
+    <table class="table">
+       <thead class="thead-dark">
+          <tr>
+             <th>Id</th>
+             <th>UnitName</th>
+             <th>UnitShort</th>
+             
+          </tr>
+       </thead>
+       <tbody>
+          <tr *ngFor = "let unit of units">
+             <td>{{unit.id}}</td>
+             <td>{{unit.unit_name}}</td>
+             <td>{{unit.unit_short}}</td>
+             <td><button class="btn btn-sm btn-info">edit</button></td>
+             <td><button class="btn btn-sm btn-danger" >delete</button></td>
+          </tr>
+       </tbody>
+    </table>
+  </div> -->  
